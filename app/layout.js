@@ -1,12 +1,10 @@
 // app/layout.js
-export default function RootLayout({ children, team, analytics }) {
+export default function Layout({ children, modal }) {
   return (
     <html>
       <body>
-        <h1>root layout</h1>
         {children}
-        {team}
-        {analytics}
+        {modal}
       </body>
     </html>
   )
