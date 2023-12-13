@@ -1,0 +1,15 @@
+# https://editorconfig.org
+ 
+root = true
+ 
+[*] //表示所有的文件都可用
+charset = utf-8 //设置文件的字符集
+indent_style = space //缩进的风格是space 回车键
+indent_size = 2//缩进大小是2
+end_of_line = lf //缩进类型视lf
+insert_final_newline = true //始终再文章末尾进入一个新行
+trim_trailing_whitespace = true //移除无效空格
+ 
+[*.md] //表示md文档只需要尊行以下规则
+insert_final_newline = false
+trim_trailing_whitespace = false
