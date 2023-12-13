@@ -1,25 +1,34 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    reactStrictMode: true,
-    async redirects() {
-      return [
+// next.config.js
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/blog/yayu',
+        destination: '/blog/yayu_redirects',
+        permanent: true,
+      },
+    ]
+  },
+  async rewrites() {
+    return {
+      beforeFiles: [
         {
-          source: '/index',
-          destination: '/',
-          permanent: true,
+          source: '/blog/yayu',
+          destination: '/blog/yayu_beforeFiles',
         },
-      ]
-    },
-    async rewrites() {
-      return [
+      ],
+      afterFiles: [
         {
-          source: '/about',
-          destination: '/',
+          source: '/blog/yayu',
+          destination: '/blog/yayu_afterFiles',
         },
-      ]
+      ],
+      fallback: [
+        {
+          source: '/blog/yayu',
+          destination: `/blog/yayu_fallback`,
+        },
+      ],
     }
-  }
-  
-  module.exports = nextConfig
-  
-  
+  },
+}
